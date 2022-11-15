@@ -1,0 +1,74 @@
+<body class="body">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section"></h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-7 col-lg-5">
+                    <div class="login-wrap">
+                        <h3 class="text-center mb-4">Employee Register</h3>
+                        <form action="" class="for" [formGroup]="registerForm">
+                            <div class="form-group mb-3">
+                                <label class="label"  name="name">Full Name</label>
+                                <input type="text" id="uname" class="form-control" formControlName="uname" placeholder="John Doe">     
+                            </div>
+                            <div *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched" class="text-danger">
+                                <p>invalid username</p>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="number">Address</label>
+                                <textarea name="" id="" cols="10" rows="5" id="adress" formControlName="adress" class="form-control"
+                                    placeholder="Name ,House name, address, phone number, pin"></textarea>
+                                <span class="icon fa fa-paper-plane-o"></span>
+                            </div>
+                            <div *ngIf="this.registerForm.get('adress')?.errors&&this.registerForm.get('adress')?.touched" class="text-danger">
+                                <p>invalid Address Format</p>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="email">DOB</label>
+                                <input type="date" class="form-control" placeholder="">
+                                <span class="icon fa fa-paper-plane-o"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for=""></label>
+                                <label for="">Choose a Role: &nbsp; &nbsp;</label>
+                                <select name="" id="">
+                                    <option value="volvo">Admin</option>
+                                    <option value="saab">Manager</option>
+                                    <option value="opel">HR</option>
+                                    <option value="audi">Developer</option>
+                                </select><span class="icon fa fa-paper-plane-o"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="number">Phone Number</label>
+                                <input type="text" class="form-control" id="phno" formControlName="phno" placeholder="+91,96">
+                                <span class="icon fa fa-paper-plane-o"></span>
+                            </div>
+                            <div *ngIf="this.registerForm.get('phno')?.errors&&this.registerForm.get('phno')?.touched" class="text-danger">
+                                <p>invalid Phone Number</p>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="label" for="password"></label>
+                                <p>Please select your Gender:</p>
+                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <label for="html">Male</label><br>
+                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <label for="css">Female</label><br>
+                                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                                <label for="javascript">Other</label> <span class="icon fa fa-lock"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">SUBMIT</button>
+                            </div>
+                            <br><br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
